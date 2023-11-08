@@ -1,49 +1,70 @@
 body {
-    font-family:'Courier New', Courier, monospace;
-    background-color: burlywood;
-    padding-left: 20%;
-    padding-right: 20%;
+  font-family: "Courier New", Courier, monospace;
+  background-image: url("images/bearBG.gif");
+  background-size: cover;
+  background-color: rgb(240, 233, 224);
+  padding-left:15%;
+  padding-right: 15%;
+  text-align: center;
 }
 
 #mainTitle {
-    font-size: 50px;
-    color: #fff;
-    padding-top: 5%;
-    padding-top: 2%;
-    padding-left: 10%;
-    padding-right: 10%;
-    text-align: center;
-    font-weight: bolder;
+  font-size: 50px;
+  color: #ec7676;
+  padding-top: 5%;
+  padding-bottom: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  font-weight: bolder;
 }
 
 h1 {
-    text-align: center;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #c0392b;
-  }
+  text-align: center;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+#taskList, .container, #newTaskInput, button {
+    font-size: 20px;
+}
+
+.container, button, #newTaskInput{
+    border-radius: 8px;
+}
+
+.container{
+    padding: 50px;
+    background-color: #ffffff86;
+}
+
+#newTaskInput{
+    padding-left: 2%;
+    padding-right: 2%;
+}
