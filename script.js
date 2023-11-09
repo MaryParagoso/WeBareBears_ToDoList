@@ -11,6 +11,12 @@ function addTask() {
     }
 }
 
+function enterKey(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+}
+
 function deleteTask(index) {
     const confirmDelete = window.confirm('Are you sure you want to delete this task?');
 
