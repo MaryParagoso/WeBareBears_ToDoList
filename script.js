@@ -53,6 +53,3 @@ function displayTasks() {
         taskList.appendChild(listItem);
     });
 }
-
-// Initial display
-displayTasks();
