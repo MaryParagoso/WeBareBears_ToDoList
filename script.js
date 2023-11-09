@@ -17,6 +17,12 @@ function enterKey(event) {
   }
 }
 
+function enterKey(event) {
+    if (event.key === 'Enter') {
+        addTask();
+    }
+}
+
 function deleteTask(index) {
   const confirmDelete = window.confirm(
     "Are you sure you want to delete this task?"
@@ -70,3 +76,20 @@ function displayTasks() {
 
 // Initial display
 displayTasks();
+    const taskList = document.getElementById('taskList');
+    taskList.innerHTML = '';
+
+    tasks.forEach((task, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${task}`;
+        
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function () {
+            deleteTask(index);
+        };
+
+        listItem.appendChild(deleteButton);
+        taskList.appendChild(listItem);
+    });
+}
