@@ -83,14 +83,5 @@ function displayTasks() {
   });
 }
 
-// Add a function to handle Enter key press for adding tasks
-document
-  .getElementById("newTaskInput")
-  .addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
-      addTask();
-    }
-  });
-
 // Initial display
 displayTasks();
