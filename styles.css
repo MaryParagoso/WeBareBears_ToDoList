@@ -1,9 +1,9 @@
 body {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Verdana", sans-serif;
   background-image: url("images/bearBG.gif");
   background-size: cover;
   background-color: rgb(240, 233, 224);
-  padding-left:15%;
+  padding-left: 15%;
   padding-right: 15%;
   text-align: center;
 }
@@ -28,7 +28,7 @@ h1 {
 
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
 }
 
 li {
@@ -48,23 +48,50 @@ button {
 }
 
 button:hover {
-  background-color: #c0392b;
+  background-color: #e35747;
 }
 
-#taskList, .container, #newTaskInput, button {
-    font-size: 20px;
+#taskList,
+.container,
+#newTaskInput,
+button {
+  font-size: 20px;
 }
 
-.container, button, #newTaskInput{
-    border-radius: 8px;
+.container,
+button,
+#newTaskInput {
+  border-radius: 8px;
 }
 
-.container{
-    padding: 50px;
-    background-color: #ffffff86;
+.container {
+  padding: 50px;
+  background-color: #ffffff86;
+  text-align: left;
 }
 
-#newTaskInput{
-    padding-left: 2%;
-    padding-right: 2%;
+#newTaskInput {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+#clearTask {
+  bottom: 10px;
+  left: 50%;
+  text-align: center;
+  margin: 0 auto;
+  background-color: #9c4835;
+}
+
+.tasks {
+  overflow: auto;
+  height: 50vh;
+}
+
+.taskContainer {
+  padding-top: 20px;
+}
+
+.inputDiv {
+  padding-bottom: 20px;
 }
