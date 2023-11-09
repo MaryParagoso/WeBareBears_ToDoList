@@ -2,7 +2,7 @@ body {
   font-family: "Courier New", Courier, monospace;
   background-image: url("images/bearBG.gif");
   background-size: cover;
-  background-color: rgb(240, 233, 224);
+  background-color: rgb(77, 75, 73);
   padding-left: 15%;
   padding-right: 15%;
   text-align: center;
@@ -17,6 +17,8 @@ body {
   padding-right: 10%;
   text-align: center;
   font-weight: bolder;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 h1 {
