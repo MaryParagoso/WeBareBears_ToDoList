@@ -5,9 +5,15 @@ function addTask() {
   const newTask = newTaskInput.value.trim();
 
   if (newTask !== "") {
-    tasks.push({ text: newTask, isEditing: false });
+    tasks.push(newTask);
     displayTasks();
     newTaskInput.value = "";
+  }
+}
+
+function enterKey(event) {
+  if (event.key === "Enter") {
+    addTask();
   }
 }
 
@@ -20,18 +26,6 @@ function deleteTask(index) {
     tasks.splice(index, 1);
     displayTasks();
   }
-}
-
-function editTask(index) {
-  tasks[index].isEditing = true;
-  displayTasks();
-}
-
-function saveTask(index) {
-  const newText = document.getElementById(`editedTask${index}`).value;
-  tasks[index].text = newText;
-  tasks[index].isEditing = false;
-  displayTasks();
 }
 
 function clearAllTasks() {
@@ -51,37 +45,15 @@ function displayTasks() {
 
   tasks.forEach((task, index) => {
     const listItem = document.createElement("li");
-
-    if (task.isEditing) {
-      // Display an input field for editing
-      const editInput = document.createElement("input");
-      editInput.type = "text";
-      editInput.value = task.text;
-      editInput.id = `editedTask${index}`;
-      editInput.addEventListener("keyup", (event) => {
-        if (event.key === "Enter") {
-          saveTask(index);
-        }
-      });
-      listItem.appendChild(editInput);
-    } else {
-      // Display the task text
-      const taskText = document.createElement("span");
-      taskText.textContent = task.text;
-      listItem.appendChild(taskText);
-    }
+    listItem.textContent = `${task}`;
 
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
-    deleteButton.className = "delete-button"; // Apply the delete-button class
     deleteButton.onclick = function () {
       deleteTask(index);
     };
-    listItem.appendChild(deleteButton);
 
+    listItem.appendChild(deleteButton);
     taskList.appendChild(listItem);
   });
 }
-
-// Initial display
-displayTasks();
