@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List App</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   </head>
   <body>
     <div id="mainTitle">To-Do List</div>
     <div class="container">
-<<<<<<< HEAD
       <input
         type="text"
         id="newTaskInput"
@@ -17,28 +17,9 @@
         onkeydown="enterKey(event)"
       />
       <button onclick="addTask()">Add Task</button>
+      <p id="noTaskMessage">No tasks added</p>
       <ul id="taskList"></ul>
-      <button onclick="clearAllTasks()">Clear All Tasks</button>
-=======
-      <div class="inputDiv">
-        <input
-          type="text"
-          id="newTaskInput"
-          placeholder="Enter a new task"
-          onkeydown="enterKey(event)"
-        />
-        <input type="text" id="newTaskInput" placeholder="Enter a new task" onkeydown="enterKey(event)">
-        <button onclick="addTask()">Add Task</button>
-      </div>
-      <div class="tasks">
-        <ul id="taskList"></ul>
-      </div>
-      <div class="taskContainer">
-        <button onclick="clearAllTasks()" id="clearTask">
-          Clear All Tasks
-        </button>
-      </div>
->>>>>>> 72d2f9a9115cecfba2eda4e99bf0e52eb22a396f
+      <button onclick="clearAllTasks()" id="clearAllButton">Clear All Tasks</button>
     </div>
     <script src="script.js"></script>
   </body>
