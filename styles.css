@@ -3,7 +3,7 @@ body {
   background-image: url("images/bearBG.gif");
   background-size: cover;
   background-color: rgb(240, 233, 224);
-  padding-left:15%;
+  padding-left: 15%;
   padding-right: 15%;
   text-align: center;
 }
@@ -21,14 +21,13 @@ body {
 
 h1 {
   text-align: center;
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px;
+  padding: 1%;
 }
 
 ul {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
+  text-align: justify;
 }
 
 li {
@@ -51,20 +50,26 @@ button:hover {
   background-color: #c0392b;
 }
 
-#taskList, .container, #newTaskInput, button {
-    font-size: 20px;
+#taskList,
+.container,
+#newTaskInput,
+button {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
 }
 
-.container, button, #newTaskInput{
-    border-radius: 8px;
+.container,
+button,
+#newTaskInput {
+  border-radius: 8px;
 }
 
-.container{
-    padding: 50px;
-    background-color: #ffffff86;
+.container {
+  padding: 50px;
+  background-color: #ffffff86;
 }
 
-#newTaskInput{
-    padding-left: 2%;
-    padding-right: 2%;
+#newTaskInput {
+  padding-left: 2%;
+  padding-right: 2%;
 }
