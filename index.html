@@ -9,6 +9,7 @@
   <body>
     <div id="mainTitle">To-Do List</div>
     <div class="container">
+<<<<<<< HEAD
       <input
         type="text"
         id="newTaskInput"
@@ -18,6 +19,26 @@
       <button onclick="addTask()">Add Task</button>
       <ul id="taskList"></ul>
       <button onclick="clearAllTasks()">Clear All Tasks</button>
+=======
+      <div class="inputDiv">
+        <input
+          type="text"
+          id="newTaskInput"
+          placeholder="Enter a new task"
+          onkeydown="enterKey(event)"
+        />
+        <input type="text" id="newTaskInput" placeholder="Enter a new task" onkeydown="enterKey(event)">
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <div class="tasks">
+        <ul id="taskList"></ul>
+      </div>
+      <div class="taskContainer">
+        <button onclick="clearAllTasks()" id="clearTask">
+          Clear All Tasks
+        </button>
+      </div>
+>>>>>>> 72d2f9a9115cecfba2eda4e99bf0e52eb22a396f
     </div>
     <script src="script.js"></script>
   </body>
