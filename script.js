@@ -5,9 +5,13 @@ function addTask() {
   const newTask = newTaskInput.value.trim();
 
   if (newTask !== "") {
-    tasks.push(newTask);
+    const randomColor = getRandomColor();
+    tasks.push({ text: newTask, color: randomColor });
     displayTasks();
     newTaskInput.value = "";
+
+    const clearAllButton = document.getElementById("clearAllButton");
+    clearAllButton.style.display = "block";
   }
 }
 
@@ -17,10 +21,10 @@ function enterKey(event) {
   }
 }
 
-function enterKey(event) {
-    if (event.key === 'Enter') {
-        addTask();
-    }
+function getRandomColor() {
+  const opacity = 0.7;
+  const randomColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+  return `rgba(${parseInt(randomColor.slice(-6, -4), 16)}, ${parseInt(randomColor.slice(-4, -2), 16)}, ${parseInt(randomColor.slice(-2), 16)}, ${opacity})`;
 }
 
 function deleteTask(index) {
@@ -31,6 +35,11 @@ function deleteTask(index) {
   if (confirmDelete) {
     tasks.splice(index, 1);
     displayTasks();
+
+    if (tasks.length === 0) {
+      const clearAllButton = document.getElementById("clearAllButton");
+      clearAllButton.style.display = "none";
+    }
   }
 }
 
@@ -42,54 +51,37 @@ function clearAllTasks() {
   if (confirmClear) {
     tasks = [];
     displayTasks();
+
+    const clearAllButton = document.getElementById("clearAllButton");
+    clearAllButton.style.display = "none";
   }
 }
 
 function displayTasks() {
   const taskList = document.getElementById("taskList");
+  const noTaskMessage = document.getElementById("noTaskMessage");
   taskList.innerHTML = "";
 
+  if (tasks.length === 0) {
+    noTaskMessage.style.display = "block"; // Show the message if no tasks
+  } else {
+    noTaskMessage.style.display = "none";
+    
   tasks.forEach((task, index) => {
     const listItem = document.createElement("li");
-    listItem.textContent = `${task}`;
+    listItem.textContent = task.text;
+    listItem.style.backgroundColor = task.color;
 
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
+    const deleteIcon = document.createElement("i");
+    deleteIcon.className = "fas fa-times";
+    deleteButton.className = "delete-button";
     deleteButton.onclick = function () {
       deleteTask(index);
     };
-
+    deleteButton.appendChild(deleteIcon);
     listItem.appendChild(deleteButton);
     taskList.appendChild(listItem);
   });
-
-  const clearTaskButton = document.getElementById("clearTask");
-
-  // Add a scroll event listener to show/hide the button
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      // Show the button when scrolled down
-      clearTaskButton.style.display = "block";
-    }
-  });
 }
-
-// Initial display
-displayTasks();
-    const taskList = document.getElementById('taskList');
-    taskList.innerHTML = '';
-
-    tasks.forEach((task, index) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${task}`;
-        
-        const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.onclick = function () {
-            deleteTask(index);
-        };
-
-        listItem.appendChild(deleteButton);
-        taskList.appendChild(listItem);
-    });
 }

@@ -2,8 +2,8 @@ body {
   font-family: "Verdana", sans-serif;
   background-image: url("images/bearBG.gif");
   background-size: cover;
-  background-color: rgb(240, 233, 224);
-  padding-left: 15%;
+  background-color: rgb(132, 130, 126);
+  padding-left:15%;
   padding-right: 15%;
   text-align: center;
 }
@@ -17,7 +17,52 @@ body {
   padding-right: 10%;
   text-align: center;
   font-weight: bolder;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+    animation: glitch 2s infinite;
 }
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0 #8691f1, -2px -2px 0 #93f889;
+  }
+  25% {
+    text-shadow: -2px 2px 0 #d8ec76, 2px -2px 0 #76d2ec;
+  }
+  50% {
+    text-shadow: 2px -2px 0 #ec76da, -2px 2px 0 #d9f597;
+  }
+  75% {
+    text-shadow: -2px -2px 0 #98f1b4, 2px 2px 0 #a29bf8;
+  }
+  100% {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #faf2f2, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
+}
+
+#noTaskMessage {
+  font-size: 16px; 
+  color: #080808; 
+  padding: 10px; 
+  text-align: center;  
+  border-radius: 5px; 
+  margin-top: 20px; 
+}
+#clearAllButton {
+  display: none;
+  background-color: #cf7d4b;
+  color: #fff;
+  border: none;
+  padding: 3px 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#clearAllButton:hover {
+  background-color: #87f965;
+  color: #070101;
+}
+
 
 h1 {
   text-align: center;
@@ -26,35 +71,72 @@ h1 {
 
 ul {
   list-style-type: none;
-  padding: 10px;
+  padding: 5px;
   text-align: justify;
+}
+
+@media (max-width: 600px) {
+  .delete-button {
+    margin-left: 0; /* Remove margin for smaller screens */
+  }
+li {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #443434;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 5px; 
+}
 }
 
 li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+  border-bottom: 1px solid #443434;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-button {
-  background-color: #e74c3c;
+.delete-button {
+  background-color: #f0331e;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 3px 6px;
+  margin-left: 20px;
   cursor: pointer;
 }
 
+.delete-button:hover {
+  background-color: #eaf25a;
+  color: #f34040;
+}
+
+button {
+  background-color: #6b95da;
+  color: #fff;
+  border: none;
+  padding: 3px 6px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
 button:hover {
-  background-color: #e35747;
+  background-color: #58ebae;
+  color: #070101;
 }
 
 #taskList,
 .container,
 #newTaskInput,
 button {
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .container,
@@ -74,27 +156,21 @@ button,
   padding-right: 2%;
 }
 
-#clearTask {
-  bottom: 10px;
-  left: 50%;
-  text-align: center;
-  margin: 0 auto;
-  background-color: #9c4835;
-  
 #taskList, .container, #newTaskInput, button {
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
 }
 
-.tasks {
-  overflow: auto;
-  height: 50vh;
+.container, button, #newTaskInput{
+    border-radius: 8px;
 }
 
-.taskContainer {
-  padding-top: 1%;
+.container{
+    padding: 50px;
+    background-color: #ffffff86;
 }
 
-.inputDiv {
-  padding-bottom: 1%;
+#newTaskInput{
+    padding-left: 2%;
+    padding-right: 2%;
 }
